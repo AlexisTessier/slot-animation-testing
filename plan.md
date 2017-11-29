@@ -71,6 +71,7 @@ Mise en place concrète
 *Interlude sur les performance des animations en JS*
 + Le mythe provient historiquement d'un utilisation abusive de jQuery
 + Les problèmes sont presque les même qu'en CSS (lien vers un article sur les repaint and redraw)
++ En JS, il est possible de nerfer le taux de rafraîchissement pour améliorer la fluidité sur les devices mobiles
 + Avec WebGl/shader on peut taper du 60 images/sec (montrer des exemples sur shadertoy) mais on s'écarte un peu du js
 + Bref, les animations en JS peuvent être tout aussi performantes voir plus qu'en CSS
 
