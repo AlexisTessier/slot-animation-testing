@@ -1,8 +1,8 @@
 Faire bouger un rond dans chrome, et tester qu'il bouge bien
 ============================================================
 
-Pertinence des animations
--------------------------
+01. Pertinence des animations
+-----------------------------
 + Aider l'utilisateur à comprendre ce qui se passe ?
 + Esthétique ?
 + Éviter les animations gratuites ...
