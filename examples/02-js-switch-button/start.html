@@ -18,8 +18,28 @@
 </body>
 
 <style type="text/css">
+	.switch-button-switch{
+		transform: translateX(0%);
+		transition: transform 180;
+	}
+
+	.switch-button-switch.state-on{
+		transform: translateX(100%);
+	}
 </style>
 
 <script type="text/javascript">startApp(()=>{
+	const $track = document.querySelector('.switch-button-track');
+	const $switch = document.querySelector('.switch-button-switch');
+
+	let stateOn = false;
+	window.animate = function animate(state) {
+		state ? $switch.classList.add('state-on') : $switch.classList.remove('state-on');
+	}
+
+	$track.addEventListener('click', ()=>{
+		stateOn = !stateOn;
+		animate(stateOn);
+	});
 })</script>
 </html>
