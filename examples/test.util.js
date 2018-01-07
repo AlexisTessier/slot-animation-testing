@@ -11,11 +11,12 @@ const shotref = id => path.join(shotdir(id), `${id}.ref.png`);
 const shottest = id => path.join(shotdir(id), `${id}.test.png`);
 const shotdiff = id => path.join(shotdir(id), `${id}.diff.png`);
 
-async function makeDiff(id){
+async function makeDiff(id, threshold){
 	const diff = new BlinkDiff({
 		imageAPath: shotref(id),
 		imageBPath: shottest(id),
 		thresholdType: BlinkDiff.THRESHOLD_PIXEL,
+		threshold,
 		imageOutputPath: shotdiff(id)
 	});
 
@@ -66,7 +67,7 @@ async function makeDiff(id){
 	return diffed.then(diff => assert(diff.status.ok, diff.message));
 }
 
-async function makeShot(page, id) {
+async function makeShot(page, id, threshold) {
 	await fs.ensureDir(path.dirname(shottest(id)));
 	await page.screenshot({path: shottest(id)});
 	
@@ -75,7 +76,7 @@ async function makeShot(page, id) {
 		await fs.copy(shottest(id), shotref(id));
 	}
 	else{
-		await makeDiff(id);
+		await makeDiff(id, threshold);
 	}
 }
 
@@ -96,11 +97,11 @@ async function test({
 	await page.goto(url);
 
 	try{
-		await callback({page, makeShot: id => makeShot(page, path.join(example, id))});
-		process.stdout.write(chalk.green('Tests successfull'));
+		await callback({page, makeShot: (id, threshold = 100) => makeShot(page, path.join(example, id), threshold)});
+		process.stdout.write(chalk.green('Tests successfull')+'\n');
 	}
 	catch(err){
-		process.stderr.write(chalk.red(err.message));
+		process.stderr.write(chalk.red(err.message)+'\n');
 		process.exitCode = 1;
 	}
 	finally{

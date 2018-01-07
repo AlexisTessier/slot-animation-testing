@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "merge slides && mv slides/merged.md slides.md",
+    "build": "merge slides && mv slides/merged.md README.md",
     "examples": "here -w -d examples/",
     "reset": "rm -rf snapshots",
-    "waiting": "open https://www.youtube.com/watch?v=eFbKKsEoQNg"
+    "waiting": "open https://www.youtube.com/watch?v=eFbKKsEoQNg",
+    "test-01": "node examples/01-css-switch-button/test.wip",
+    "test-02": "node examples/02-js-switch-button/test.wip"
   },
   "repository": {
     "type": "git",

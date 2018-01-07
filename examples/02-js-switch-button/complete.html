@@ -17,9 +17,49 @@
 	</div>
 </body>
 
-<style type="text/css">
-</style>
-
 <script type="text/javascript">startApp(()=>{
+	const $track = document.querySelector('.switch-button-track');
+	const $switch = document.querySelector('.switch-button-switch');
+
+	let stateOn = false;
+	$track.addEventListener('click', ()=>{
+		stateOn = !stateOn;
+		animate(stateOn);
+	})
+
+	let cursor = 0;
+	window.animate = function animate(on, tween = window.tween) {
+		tween(cursor, on ? 1 : 0, 180, interpolated => {
+			cursor = interpolated;
+			render(cursor);
+		})
+	}
+
+	window.render = function render(cursor) {
+		$switch.style.transform = 'translateX('+cursor*100+'%)';
+	}
+
+	window.tween = function tween(initialCursor, finalCursor, duration, onUpdate) {
+		const cursorDelta = finalCursor - initialCursor;
+		let time = 0;
+
+		let previousTime = Date.now();
+		function loop(){
+			const currentTime = Date.now();
+			time += (currentTime - previousTime);
+			if (time > duration) time = duration;
+			loopPreviousTime = currentTime;
+
+			const progress = time/duration;
+
+			cursor = initialCursor + progress * cursorDelta;
+			onUpdate(cursor);
+
+			if (time < duration) {
+				requestAnimationFrame(loop);
+			}
+		}
+		loop();
+	}
 })</script>
 </html>
