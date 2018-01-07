@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "merge slides && mv slides/merged.md slides.md",
+    "examples": "here -w -d examples/",
+    "reset": "rm -rf snapshots",
+    "waiting": "open https://www.youtube.com/watch?v=eFbKKsEoQNg"
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,9 @@
     "chalk": "2.3.0",
     "delay": "2.0.0",
     "fs-extra": "5.0.0",
-    "puppeteer": "0.13.0"
+    "merge-md": "1.0.3",
+    "open": "0.0.5",
+    "puppeteer": "0.13.0",
+    "serve-here": "3.2.0"
   }
 }

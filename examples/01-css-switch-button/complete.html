@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../common.css">
+	<script type="text/javascript" src="../common.js"></script>
+</head>
+<body>
+	<h1>CSS - Switch Button</h1>
+
+	<div class="switch-button-container">
+		<div class="component-background">
+			<div class="switch-button-track">
+				<div class="switch-button-switch"></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<style type="text/css">
+	.switch-button-switch{
+		transform: translateX(0%);
+		transition: transform 180;
+	}
+
+	.switch-button-switch.state-on{
+		transform: translateX(100%);
+	}
+</style>
+
+<script type="text/javascript">startApp(()=>{
+	const $track = document.querySelector('.switch-button-track');
+	const $switch = document.querySelector('.switch-button-switch');
+
+	let stateOn = false;
+	window.animate = function animate(state) {
+		state ? $switch.classList.add('state-on') : $switch.classList.remove('state-on');
+	}
+
+	$track.addEventListener('click', ()=>{
+		stateOn = !stateOn;
+		animate(stateOn);
+	});
+})</script>
+</html>

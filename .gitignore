@@ -8,6 +8,9 @@ tmp
 documentation
 draft
 *.wip.html
+*.wip.js
+wip.html
 *.diff.png
 *.test.png
 *.ref.png
+/snapshots

@@ -6,8 +6,7 @@ const chalk = require('chalk')
 const puppeteer = require('puppeteer')
 const BlinkDiff = require('blink-diff')
 
-const url = "http://192.168.1.27:3000/example-01-css-switch/index-todo.wip.html";
-const shotdir = id => path.join(__dirname, 'snapshots', id);
+const shotdir = id => path.join(__dirname, '../snapshots', id);
 const shotref = id => path.join(shotdir(id), `${id}.ref.png`);
 const shottest = id => path.join(shotdir(id), `${id}.test.png`);
 const shotdiff = id => path.join(shotdir(id), `${id}.diff.png`);
@@ -67,21 +66,6 @@ async function makeDiff(id){
 	return diffed.then(diff => assert(diff.status.ok, diff.message));
 }
 
-async function test(callback){
-	const browser = await puppeteer.launch();
-	const page = await browser.newPage();
-
-	try{
-		await callback(page);
-	}
-	catch(err){
-		console.log(chalk.red(err.message));
-	}
-	finally{
-		await browser.close();
-	}
-}
-
 async function makeShot(page, id) {
 	await fs.ensureDir(path.dirname(shottest(id)));
 	await page.screenshot({path: shottest(id)});
@@ -95,8 +79,33 @@ async function makeShot(page, id) {
 	}
 }
 
-test(async page => {
+async function test({
+	example,
+	headless = true,
+	protocol = 'http',
+	host = '192.168.1.27',
+	port = '3000',
+	file = 'wip.html'
+}, callback){
+	assert(typeof example === 'string');
+
+	const url = `${protocol}://${host}:${port}/${example}/${file}`;
+
+	const browser = await puppeteer.launch({headless});
+	const page = await browser.newPage();
 	await page.goto(url);
-	await page.waitForFunction('typeof window.switchComponent === "object"');
-	await makeShot(page, 'base');
-});
+
+	try{
+		await callback({page, makeShot: id => makeShot(page, path.join(example, id))});
+		process.stdout.write(chalk.green('Tests successfull'));
+	}
+	catch(err){
+		process.stderr.write(chalk.red(err.message));
+		process.exitCode = 1;
+	}
+	finally{
+		await browser.close();
+	}
+}
+
+module.exports = test;
