@@ -12,7 +12,7 @@ Pour ceux qui le souhaite, le projet est disponible sur github.
 + (le test) Le but des tests n'est pas de faire du TDD => Mise en place d'une animation = un peu de feeling. Le but est uniquement pour de la non-régression
 + Le slot s'intéressera plus à la mise en place technique d'une animation.
 + Tester de l'UI, c'est compliqué et ça demande beaucoup d'effort (même avec des outils comme sélénium)
-+ Probablement à envisager sur des chemin critiques ou de librairies de composants
++ Probablement à envisager sur des animations critiques (swipe de tinder) ou des librairies de composants
 + Dans les faits, une validation par l’œil humain est peut être plus pertinente...
 
 03. Mais donc, pourquoi ?
@@ -34,13 +34,11 @@ Pour ceux qui le souhaite, le projet est disponible sur github.
 	+ CSS ou JS à assez peu d'influence sur la perf', ce qui joue, ce sont les proprietés animés
 	+ transform (scale, rotate, translate) et opacity sont peu couteux est peuvent être utilisés sans craintes. Tout le reste est à utiliser avec parcimonie, voir pas du tout.
 
-06. Un cas concret
-------------------
+06. Animer un rond pour ? (00:08)
+-------------------------
 
 Une progress bar
 Un switch button
 
 07. Commençons par utiliser CSS
 -------------------------------
-
-

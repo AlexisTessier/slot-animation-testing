@@ -1,8 +1,8 @@
 Faire bouger un rond dans chrome, et tester qu'il bouge bien
 ============================================================
 
-01. Pertinence des animations
------------------------------
+Ce qu'on va faire / Pertinence des animations
+---------------------------------------------
 + Aider l'utilisateur à comprendre ce qui se passe ?
 + Esthétique ?
 + Éviter les animations gratuites ...
@@ -12,15 +12,16 @@ Faire bouger un rond dans chrome, et tester qu'il bouge bien
 
 Pourquoi faire bouger un rond ?
 -------------------------------
-+ Reproduire une progress bar o------ 0% -> ---o--- 50% -> ------o 100%
 + Reproduire un switch button (o  ) -> ( o ) -> (  o)
++ Reproduire une progress bar o------ 0% -> ---o--- 50% -> ------o 100%
 
 Pourquoi tester un rond qui bouge ?
-----------------------------------
+-----------------------------------
 + TDD sur des animations, on oublie
 + Uniquement pour de la non régression
 + Éviter un glitch perturbant pour l'utilisateur (TROUVER UN EXEMPLE ?)
 + Un composant qui va être distribué à grande échelle (librairie de composants)
+
 + Beaucoup d'effort comme évoqué plus tard
 + Une validation par l’œil humain est peut être plus pertinente...
 + Pour le challenge et pour repousser les limites de ce qui est testable, vers l'infini et l'au-delà
@@ -44,8 +45,8 @@ Mise en place concrète
 **Implémentation**
 
 + animation CSS accessibles et simple à utiliser
-- difficile à rendre dynamique (à lier au js)
 - courbes d’easing limitées
+- difficile à rendre dynamique (à lier au js)
 
 **Test**
 
@@ -53,7 +54,7 @@ Mise en place concrète
 + lourd à mettre en place et potentiellement très lourd à maintenir
 + monde idéal
 + possibilité d'avoir un diff
-+ prez' de je sais plus qui
++ prez' de je sais plus qui (https://www.youtube.com/watch?v=1wHr-O6gEfc)
 + jamais vu à l'oeuvre
 
 - Test de régression visuel

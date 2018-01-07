@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html class="hide-switch-button">
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../assets/common.css">
 	<link rel="stylesheet" type="text/css" href="./index.css">
+	<script type="text/javascript" src="../assets/common.js"></script>
 </head>
 <body>
-	<h1></h1>
+	<h1>07. Commençons par utiliser CSS</h1>
+
+	<div class="progress-bar-container">
+		<div class="component-background">
+			<div class="progress-bar-track">
+				<div class="progress-bar-cursor"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="switch-button-container"></div>
 </body>
 <style type="text/css">
-	
 </style>
 <script type="text/javascript" src="./index.js"></script>
-<script type="text/javascript">
-	
-</script>
+<script type="text/javascript">function main() {
+	const cursor = document.querySelector('.progress-bar-cursor');
+
+	getVideoProgress(progress => {
+		cursor.style.transform = `translateX(${progress*100}%)`
+	})
+}</script>
 </html>

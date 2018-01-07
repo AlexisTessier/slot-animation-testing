@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*-------------------------*/
+
+html{
+	width: 100%;
+	background-color: rgba(22, 22, 22, 0.072);
+	color:rgba(0, 0, 0, 0.82);
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+	line-height: 1.3em;
+	letter-spacing: 0.003em;
+}
+
+body{
+	max-width: 1200px;
+	margin: auto;
+	padding: 48px 80px 35px 62px;
+}
+
+h1{
+	font-size: 1.8rem;
+	opacity: 0.88;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.42);
+	margin-bottom: 2rem;
+}
+
+.progress-bar-container,
+.switch-button-container{
+	display: block;
+	background-color: white;
+	padding: 32px 42px;
+	margin-bottom: 20px;
+	border-radius:3px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.22);
+}
+
+.hide-progress-bar .progress-bar-container{
+	display: none !important;
+}
+
+.hide-switch-button .switch-button-container{
+	display: none !important;
+}
+
+.progress-bar-container::before,
+.switch-button-container::before{
+	display: block;
+	font-size: 1.1rem;
+	margin-bottom: 1.2rem;
+}
+
+.progress-bar-container::before{
+	content:'# Progress bar';
+}
+
+.switch-button-container::before{
+	content:'# Switch button';
+}
+
+.component-background{
+	display: block;
+	padding: 23px 32px;
+	background-color: rgba(60, 156, 235, 0.22);
+	border-radius: 
+}
+
+.progress-bar-track{
+	display: block;
+	position: relative;
+	background-color: rgba(60, 60, 60, 0.32);
+	border-radius: 6px;
+	width: 300px;
+	height: 12px;
+}
+
+.progress-bar-cursor{
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+}
+
+.progress-bar-cursor::before{
+	display: block;
+	content: '';
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background-color: white;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.22);
+	position: absolute;
+	top:-6px;
+	left:-6px;
+}
