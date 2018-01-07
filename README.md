@@ -26,7 +26,7 @@ Pourquoi tester un animation ?
 ---
 + Pour le challenge et pour **repousser les limites de ce qui est testable...**
 
-![Vers l'infini et l'au-delà](../assets/buzz.gif)
+![Vers l'infini et l'au-delà](https://github.com/AlexisTessier/slot-animation-testing/blob/master/assets/buzz.gif?raw=true)
 # 03.md
 Comment on fait ça ?
 ====================
@@ -56,7 +56,7 @@ Des animations à 60fps ?
 
 | **Scale** | **Rotate** | **Translate** |
 | --------- | ---------- | ------------- |
-| ![transform scale](../assets/transform-scale.png) | ![transform rotate](../assets/transform-rotate.png) | ![transform translate](../assets/transform-translate.png) |
+| ![transform scale](https://raw.githubusercontent.com/AlexisTessier/slot-animation-testing/master/assets/transform-scale.png) | ![transform rotate](https://raw.githubusercontent.com/AlexisTessier/slot-animation-testing/master/assets/transform-rotate.png) | ![transform translate](https://raw.githubusercontent.com/AlexisTessier/slot-animation-testing/master/assets/transform-translate.png) |
 
 # 06.md
 Animer un rond pour ?
@@ -64,7 +64,7 @@ Animer un rond pour ?
 
 | Un switch button | Une progress bar |
 | ---------------- | ---------------- |
-| ![switch button type iOS](../assets/switch.gif) | ![progress bar type facebook](../assets/progress-bar.png) |
+| ![switch button type iOS](https://raw.githubusercontent.com/AlexisTessier/slot-animation-testing/master/assets/switch.gif) | ![progress bar type facebook](https://raw.githubusercontent.com/AlexisTessier/slot-animation-testing/master/assets/progress-bar.png) |
 # 07.md
 Plusieurs pistes
 ================
