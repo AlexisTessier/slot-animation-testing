@@ -37,8 +37,8 @@ Pour ceux qui le souhaite, le projet est disponible sur github.
 06. Animer un rond pour ? (00:08)
 -------------------------
 
-Une progress bar
 Un switch button
+Une progress bar
 
 07. Commençons par utiliser CSS
 -------------------------------
