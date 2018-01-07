@@ -52,10 +52,8 @@ Mise en place concrète
 
 *Interlude sur les tests de régression visuelle*
 + lourd à mettre en place et potentiellement très lourd à maintenir
-+ monde idéal
 + possibilité d'avoir un diff
 + prez' de je sais plus qui (https://www.youtube.com/watch?v=1wHr-O6gEfc)
-+ jamais vu à l'oeuvre
 
 - Test de régression visuel
 	+ Changement d'état

@@ -1,6 +1,6 @@
 Animer un rond pour ?
 =====================
 
-| Une progress bar | Un switch button |
+| Un switch button | Une progress bar |
 | ---------------- | ---------------- |
-| ![progress bar type facebook](../assets/progress-bar.png) | ![switch button type iOS](../assets/switch.gif) |
+| ![switch button type iOS](../assets/switch.gif) | ![progress bar type facebook](../assets/progress-bar.png) |

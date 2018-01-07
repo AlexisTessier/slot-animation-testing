@@ -1,21 +1,14 @@
 <!DOCTYPE html>
-<html class="hide-progress-bar">
+<html>
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../assets/common.css">
 	<link rel="stylesheet" type="text/css" href="./index.css">
 	<script type="text/javascript" src="../assets/common.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
 </head>
 <body>
-	<h1>07. Commençons par utiliser CSS</h1>
-
-	<div class="switch-button-container">
-		<div class="component-background">
-			<div class="switch-button-track">
-				<div class="switch-button-switch"></div>
-			</div>
-		</div>
-	</div>
+	<h1>CSS - Progress Bar</h1>
 
 	<div class="progress-bar-container">
 		<div class="component-background">
@@ -25,14 +18,27 @@
 		</div>
 	</div>
 </body>
-<style type="text/css">
-</style>
-<script type="text/javascript" src="./index.js"></script>
-<script type="text/javascript">startApp(()=>{
-	// const cursor = document.querySelector('.progress-bar-cursor');
 
-	// getVideoProgress(progress => {
-	// 	cursor.style.transform = `translateX(${progress*100}%)`
-	// })
+<style type="text/css">
+	.progress-bar-cursor{
+		transform: translateX(30%);
+	}
+</style>
+
+<script type="text/javascript">startApp(()=>{
+	const $play = document.querySelector('.progress-bar-container')
+	const $cursor = document.querySelector('.progress-bar-cursor')
+
+	window.cursorComponent = {
+		play(){
+			getVideoProgress(progress => {
+				// Can't do nothing
+			})
+		}
+	};
+
+	$play.addEventListener('click', ()=>{
+		cursorComponent.play();
+	});
 })</script>
 </html>

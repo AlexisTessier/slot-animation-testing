@@ -1,0 +1,19 @@
+Entre autres choses...
+======================
+
+### 🤔 Mais du coup ...
+
+...on pourrait pas juste mocker les methodes de gestion du temps dés le début ?
+
++ Oui, on pourrait...
++ Mais ça ne fonctionne toujours que si l'animation est gérée en js...
++ Et puis la séparation des responsabilités, c'est important !
+
+### Note sur React motion ?
+
+[React motion](https://github.com/chenglou/react-motion) ne gère pas ses interpolations de maniere classique.
+
++ Il n'utilise pas de notion d'easing.
++ On ne choisit pas la durée de l'interpolation.
++ À la place, on donne une rigidité et une élasticité à l'élément à animer.
++ React motion s'occupe ensuite, frame par frame d'interpoler la valeur jusqu'à sa valeur finale.

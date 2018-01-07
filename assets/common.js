@@ -26,11 +26,21 @@ window.getVideoProgress = function getVideoProgress(onProgress) {
 	loop();
 }
 
+window.logError = function logError(err) {
+	document.querySelector('body').insertAdjacentHTML('beforebegin', `<div style="color:red">Error: ${err.message}</div>`);
+}
+
+window.assert = function assert(assertion, what) {
+	if (!assertion) {
+		logError(new Error(`Assertion fail: ${what}`));
+	}
+}
+
 window.startApp = function startApp(callback) {
 	try{
 		callback()
 	}
 	catch(err){
-		document.querySelector('body').insertAdjacentHTML('beforebegin', `<div style="color:red">Error: ${err.message}</div>`);
+		logError(err)
 	}
 }

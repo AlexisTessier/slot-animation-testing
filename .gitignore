@@ -7,3 +7,7 @@ tmp
 *.log
 documentation
 draft
+*.wip.html
+*.diff.png
+*.test.png
+*.ref.png

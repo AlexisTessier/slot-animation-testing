@@ -12,14 +12,14 @@ Pour ceux qui le souhaite, le projet est disponible sur github.
 + (le test) Le but des tests n'est pas de faire du TDD => Mise en place d'une animation = un peu de feeling. Le but est uniquement pour de la non-régression
 + Le slot s'intéressera plus à la mise en place technique d'une animation.
 + Tester de l'UI, c'est compliqué et ça demande beaucoup d'effort (même avec des outils comme sélénium)
++ Dans les faits, une validation par l’œil humain et de la rigueur est peut être plus pertinente...
 + Probablement à envisager sur des animations critiques (swipe de tinder) ou des librairies de composants
-+ Dans les faits, une validation par l’œil humain est peut être plus pertinente...
++ Pour le challenge et pour repousser les limites de ce qui est testable, vers l'infini et l'au-delà
 
-03. Mais donc, pourquoi ?
--------------------------
+03. Comment on fait ça ?
+------------------------
 + Spoil, la séparation des responsabilités est une part importante de la solution
 + Cela va nous pousser à comprendre ce qu'est et ce qui compose une animation.
-+ Pour le challenge et pour repousser les limites de ce qui est testable, vers l'infini et l'au-delà
 
 04. Quelques ressources
 -----------------------
@@ -40,5 +40,23 @@ Pour ceux qui le souhaite, le projet est disponible sur github.
 Un switch button
 Une progress bar
 
-07. Commençons par utiliser CSS
+07. Plusieurs pistes
+--------------------
++ Dans les 2 cas, on utilise le principe du snapshot:
+	+ On sait à un instant t que ça fonctionne.
+	+ On fait un snapshot - une image, ou un json des computedStyles - à ce même instant t.
+	+ À chaque test qui a lieu ensuite, on compare le nouveau snapshot avec celui sauvegardé.
+	+ S'il y a une différence, c'est qu'on a cassé un truc. Le test ne passera pas.
+
++ Test de régression visuel
+	+ Besoin de piloter le navigateur pour provoquer les changement d'états
+	+ Faire un screenshot puis un diff' entre 2 images est trivial
+
++ Tester les computedStyles des éléments
+	+ Pas moins complexe à mettre en place (on doit quand même piloter le navigateur pour provoquer les changements d'états)
+	+ Pas de visualisation des tests efficaces
+	+ On vérifie l'implémentation plus que le comportement
+	+ Peut avoir du sens pour éviter un conflit avec d’autres règles CSS et fournir des assertions plus précises
+
+08. Commençons par utiliser CSS
 -------------------------------
