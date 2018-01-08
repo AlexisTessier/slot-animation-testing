@@ -1,3 +1,8 @@
+const defaultHost = '10.7.101.81';
+const defaultPort = '3000';
+
+/*---------------*/
+
 const path = require('path')
 const assert = require('assert')
 
@@ -84,8 +89,8 @@ async function test({
 	example,
 	headless = true,
 	protocol = 'http',
-	host = '192.168.1.27',
-	port = '3000',
+	host = defaultHost,
+	port = defaultPort,
 	file = 'wip.html'
 }, callback){
 	assert(typeof example === 'string');
